@@ -1,4 +1,4 @@
-//import { API_URL } from "../app/(home)/page";
+import { API_URL } from "@/app/constants";
 import style from "../styles/movie-videos.module.css";
 
 //Suspense 를 적용하기위해 async 으로 정의
@@ -11,12 +11,12 @@ async function getVideos(id: string) {
   //throw new Error("something broke...");  //에러  핸들링 목적(임시)
 
   const response = await fetch(
-    `${"https://nomad-movies.nomadcoders.workers.dev/movies"}/${id}/videos`
+    `${API_URL}/${id}/videos`
   );
   return response.json();
 }
 
-
+ 
 interface Video {
   id: string;
   key: string;

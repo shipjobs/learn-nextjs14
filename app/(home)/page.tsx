@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 import Movie from "../../components/movie";
 import styles from "../../styles/home.module.css";
 
+import {API_URL} from "../constants"
+
 export const metadata = {
   title: "Home",
 };
 
-//export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+
 
 async function getMovies() {
   await new Promise((resolve) => setTimeout(resolve, 1000)); //5초간 잠시 멈춤
   //console.log("로딩 로그" + resolve); //서버사이드라.. 나타나지 않음
 
-  const response = await fetch(
-    "https://nomad-movies.nomadcoders.workers.dev/movies"
-  ); //케싱된 fetch 을 서버사이드에서 해결해줌
+  const response = await fetch(API_URL); //케싱된 fetch 을 서버사이드에서 해결해줌
   const json = await response.json();
   return json;
   //return fetch(URL).then(response => response.json());  // 같은 뜻
