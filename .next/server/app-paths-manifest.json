@@ -1,4 +1,8 @@
 {
+  "/(movies)/movies/[id]/page": "app/(movies)/movies/[id]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/(home)/page": "app/(home)/page.js",
-  "/(movies)/movies/[id]/page": "app/(movies)/movies/[id]/page.js"
+  "/about-us/company/page": "app/about-us/company/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/about-us/company/sales/page": "app/about-us/company/sales/page.js"
 }

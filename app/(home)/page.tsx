@@ -9,7 +9,7 @@ export const metadata = {
   title: "Home",
 };
 
-//export const NEXT_PUBLIC_API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+//export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 async function getMovies() {
   await new Promise((resolve) => setTimeout(resolve, 1000)); //5초간 잠시 멈춤
@@ -23,15 +23,20 @@ async function getMovies() {
   //return fetch(URL).then(response => response.json());  // 같은 뜻
 }
 
+
+interface Movie {
+  id: string;
+  title: string;
+  poster_path: string;
+  // 다른 필요한 필드를 추가하세요
+}
+
 export default async function Homepage() {
   const movies = await getMovies();
 
-  //return <div>{JSON.stringify(movies)}</div>;
-  //전체 목록 .. 리스트
-
   return (
     <div className={styles.container}>
-      {movies.map((movie) => (
+      {movies.map((movie: Movie) => (
         <Movie
           key={movie.id}
           id={movie.id}
